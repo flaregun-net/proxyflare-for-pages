@@ -1,0 +1,88 @@
+{
+  "name": "@flaregun-net/edgeflare-for-pages",
+  "version": "0.0.110",
+  "description": "a maintenance page delivered from the edge",
+  "main": "build/index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "build/*.d.ts",
+    "build/types/*.d.ts",
+    "build/index.js"
+  ],
+  "scripts": {
+    "prepublishOnly": "yarn build",
+    "postpublish": "yarn transform:private:on",
+    "build": "npm-run-all transform:private:off build:*",
+    "build:install": "yarn --check-files",
+    "build:types": "ts-node copy-core-types.ts",
+    "build:functions": "npx wrangler pages functions build --plugin --outfile=build/index.js",
+    "transform:private:off": "node ../../tasks/setPrivatePackageFlag.js --off",
+    "transform:private:on": "node ../../tasks/setPrivatePackageFlag.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "3.10.0",
+    "@flaregun-net/app-utils": "^0.0.107",
+    "@flaregun-net/edgeflare-core": "^0.0.107",
+    "@types/jest": "^27.5.0",
+    "@types/node": "^17.0.35",
+    "@typescript-eslint/eslint-plugin": "~5.25.0",
+    "@typescript-eslint/parser": "~5.25.0",
+    "del": "^6.1.1",
+    "eslint": "~7.30.0",
+    "eslint-config-prettier": "~8.3.0",
+    "eslint-plugin-jest": "^26.1.0",
+    "jest": "^28.1.0",
+    "jest-environment-miniflare": "^2.4.0",
+    "lint-staged": "^12.3.1",
+    "miniflare": "^2.4.0",
+    "path-browserify": "^1.0.1",
+    "prettier": "^2.6.2",
+    "ts-jest": "^28.0.2",
+    "ts-node": "^10.8.0",
+    "typescript": "~4.5.2",
+    "yarn-run-all": "^3.1.1"
+  },
+  "jest": {
+    "testEnvironment": "miniflare",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.json",
+        "useESM": true
+      }
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "testTimeout": 30000,
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx,js,jsx}",
+      "!src/**/*.d.ts"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint",
+      "prettier --write",
+      "yarn transform:private:on"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "directory": "packages/edgeflare-pages",
+    "url": "git@github.com:flaregun-net/apps.git"
+  },
+  "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

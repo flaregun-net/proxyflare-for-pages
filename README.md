@@ -1,0 +1,1 @@
+# Edgeflare for Cloudflare Pages
