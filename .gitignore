@@ -1,0 +1,15 @@
+.DS_Store
+.env*
+logs
+*.log
+npm-debug.log*
+.npmrc
+.yarnrc
+node_modules/
+coverage
+build/
+.vscode
+.idea/
+.npm
+.eslintcache
+.secrets

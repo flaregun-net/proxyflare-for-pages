@@ -1,0 +1,39 @@
+name: Publish
+on:
+  workflow_dispatch:
+    inputs:
+      increment:
+        description: 'Increment "major", "minor", "patch", or "pre*" version; or specify version'
+        type: string
+        required: true
+
+jobs:
+  publish:
+    name: release main branch
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          check-latest: true
+          cache: npm
+          registry-url: "https://npm.pkg.github.com"
+      - name: Authenticate with private NPM package
+        run: |
+          echo "@flaregun-net:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
+      - name: Install dependencies
+        # Skip post-install scripts here, as a malicious script could steal NODE_AUTH_TOKEN.
+        shell: bash
+        run: |
+          npm ci --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish
+        shell: bash
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run publish

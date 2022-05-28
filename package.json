@@ -1,0 +1,103 @@
+{
+  "name": "@flaregun-net/proxyflare-for-pages",
+  "version": "0.0.217-next.1",
+  "description": "A reverse proxy for your website on Cloudflare Pages",
+  "private": false,
+  "license": "MIT",
+  "main": "build/index.js",
+  "types": "index.d.ts",
+  "keywords": [
+    "proxyflare",
+    "cloudflare",
+    "cloudflare pages",
+    "cloudflare pages plugin",
+    "cloudflare reverse proxy",
+    "cloudflare nginx",
+    "nginx",
+    "reverse proxy"
+  ],
+  "files": [
+    "index.d.ts",
+    "build/*.d.ts",
+    "build/types/*.d.ts",
+    "build/index.js"
+  ],
+  "scripts": {
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
+    "postpublish": "npm run transform:private:on",
+    "build": "npm-run-all transform:private:off build:*",
+    "build:types": "ts-node ./tasks/copy-types.ts",
+    "build:functions": "npx wrangler pages functions build --plugin --outfile=build/index.js",
+    "transform:private:off": "node ../../tasks/setPrivatePackageFlag.js --off",
+    "transform:private:on": "node ../../tasks/setPrivatePackageFlag.js",
+    "publish": "ts-node ./tasks/publish.ts"
+  },
+  "peerDependencies": {
+    "@cloudflare/workers-types": "3.14.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "3.14.0",
+    "@flaregun-net/app-utils": "0.0.214",
+    "@flaregun-net/proxyflare-core": "0.0.214",
+    "@types/jest": "^29.2.2",
+    "@types/node": "^17.0.35",
+    "@typescript-eslint/eslint-plugin": "~5.25.0",
+    "@typescript-eslint/parser": "~5.25.0",
+    "cross-fetch": "^3.1.5",
+    "del": "^6.1.1",
+    "eslint": "~7.30.0",
+    "eslint-config-prettier": "~8.3.0",
+    "eslint-plugin-jest": "^26.1.0",
+    "jest": "^29.3.0",
+    "jest-environment-miniflare": "^2.5.0",
+    "lint-staged": "^12.3.1",
+    "miniflare": "^2.5.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.6.2",
+    "release-it": "^15.5.1",
+    "semver": "^7.3.8",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.8.0",
+    "typescript": "~4.5.2"
+  },
+  "jest": {
+    "testEnvironment": "miniflare",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.json",
+        "useESM": true
+      }
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "testTimeout": 30000,
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx,js,jsx}",
+      "!src/**/*.d.ts"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint",
+      "prettier --write",
+      "npm run transform:private:on"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:flaregun-net/proxyflare-for-pages.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

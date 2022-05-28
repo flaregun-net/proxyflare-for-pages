@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "before:init": ["npm run prepublishOnly"],
+    "after:release": ["npm run postpublish"]
+  },
+  "git": {
+    "tag": true,
+    "commit": true,
+    "push": true,
+    "requireUpstream": false,
+    "requireCleanWorkingDir": false,
+    "pushArgs": ["--follow-tags", "--set-upstream origin staging"],
+    "releaseName": "v${version}",
+    "commitMessage": "v${version}"
+  },
+  "github": {
+    "release": false,
+    "autoGenerate": true,
+    "releaseName": "v${version}",
+    "tokenRef": "GITHUB_TOKEN"
+  },
+  "npm": {
+    "publish": true,
+    "skipChecks": true,
+    "ignoreVersion": true
+  }
+}
