@@ -417,15 +417,14 @@
   dependencies:
     parse-domain "^2.3.4"
 
-"@flaregun-net/edgeflare-core@^0.0.107":
+"@flaregun-net/proxyflare-core@^0.0.107":
   version "0.0.107"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/edgeflare-core/0.0.107/9a14f630aec6397acc3b74f21f8b6edbc3dd003d56da0f1bce5861b9a5b8337c#42e9530e11c91365f5615aaf2d340f4c047cb611"
-  integrity sha512-mXcw4sqHYvcF6YhBigjV8Dvw+MW4PZN1gQ8QPLx6KjT7n5LeL5+Gh2kcho8UiaQJAncGLPsEtrBySVpIZOTeWQ==
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.107/581073cf32663fb76ca5ce3ac99a39e25efcda074faf97420d66d2937f1f2dc4#6629648826174fa878cb4b0e88f3f7b2bbfd906b"
+  integrity sha512-PVtsq5iSAiSdJuoQnsSt10to29EnTsWNu63Wdhvy71RH7GbJSWdA8gj1agIXwLCYKm6uYApYxUFp+Mu2qTIeBw==
   dependencies:
     "@flaregun-net/app-utils" "^0.0.107"
     joi "^17.6.0"
     lodash "^4.17.11"
-    phone "^3.1.11"
 
 "@hapi/hoek@^9.0.0":
   version "9.3.0"
@@ -5309,11 +5308,6 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
-
-phone@^3.1.11:
-  version "3.1.19"
-  resolved "https://registry.yarnpkg.com/phone/-/phone-3.1.19.tgz#16b6998aa0aee1cd5e5b21273f09934273bbf8a8"
-  integrity sha512-4yNmp8WrPC5nnHsbq5b0UjPrgnUifyFogK0OkEOUOUIGfCxWcxTvS+lQXC9JbI7bY9bN+PwwAVrGITh5S7oA/Q==
 
 picocolors@^1.0.0:
   version "1.0.0"

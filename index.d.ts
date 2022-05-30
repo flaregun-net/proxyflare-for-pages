@@ -4,6 +4,6 @@ export type PluginArgs = {
   config: CoreTypes.RawConfiguration
 }
 
-export default function EdgeflarePagesPluginFunction(
+export default function ProxyflarePagesPluginFunction(
   args: PluginArgs,
 ): PagesFunction

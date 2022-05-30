@@ -1,16 +1,16 @@
 import { makeBaseContainer } from "@flaregun-net/app-utils"
-import { router } from "@flaregun-net/edgeflare-core"
+import { router } from "@flaregun-net/proxyflare-core"
 import type { PluginArgs } from ".."
 
-type EdgeflarePagesPluginFunction<
+type ProxyflarePagesPluginFunction<
   Env = unknown,
   Params extends string = string,
   Data extends Record<string, unknown> = Record<string, unknown>,
 > = PagesPluginFunction<Env, Params, Data, PluginArgs>
 
-export const onRequest: EdgeflarePagesPluginFunction = async (context) => {
+export const onRequest: ProxyflarePagesPluginFunction = async (context) => {
   const { pluginArgs } = context
-  const { siteName, config } = pluginArgs
+  const { config } = pluginArgs
 
   const baseContainer = makeBaseContainer(
     {
@@ -20,8 +20,10 @@ export const onRequest: EdgeflarePagesPluginFunction = async (context) => {
       next: context.next,
     },
     {
-      siteName,
-      appName: "edgeflare",
+      isDev: true,
+      siteName: config.siteName,
+      appName: "proxyflare",
+      loggerEndpoint: "https://logger-service.networkchimp.workers.dev",
     },
   )
 

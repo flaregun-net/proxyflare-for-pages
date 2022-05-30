@@ -1,4 +1,4 @@
-import edgeflarePagesPlugin from "../"
+import edgeflarePagesPlugin from ".."
 
 export const onRequest: PagesFunction = edgeflarePagesPlugin({
   config: {
