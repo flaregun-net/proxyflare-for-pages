@@ -1,6 +1,6 @@
 {
   "name": "@flaregun-net/proxyflare-for-pages",
-  "version": "0.0.114",
+  "version": "0.0.115",
   "description": "NGINX-like port proxying at the edge",
   "main": "build/index.js",
   "types": "index.d.ts",
@@ -26,8 +26,8 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "3.10.0",
-    "@flaregun-net/app-utils": "^0.0.113",
-    "@flaregun-net/proxyflare-core": "^0.0.113",
+    "@flaregun-net/app-utils": "^0.0.114",
+    "@flaregun-net/proxyflare-core": "^0.0.114",
     "@types/jest": "^27.5.0",
     "@types/node": "^17.0.35",
     "@typescript-eslint/eslint-plugin": "~5.25.0",

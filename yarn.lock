@@ -410,19 +410,19 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@flaregun-net/app-utils@^0.0.113":
-  version "0.0.113"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.113/17c690c2879102d64dd7d4126c79063ebd48f2603060a2af852842da41cebe44#647bf7292c29d3b287976aabc94241a612ad94ed"
-  integrity sha512-S88OkoXNSnd01WY+uJWku6qZ9tV5wsLZ3HAStiCullJVB+rTsR7DPtyHecJP44L2uue5zx2rmOeDyui8KMEXzw==
+"@flaregun-net/app-utils@^0.0.114":
+  version "0.0.114"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.114/dc0b3e2e00701d92f4bca6d204959e8780c4a816d6597e6716513b0de1f38f18#9e18a0a05acf472effbba6ee11b599ec9daa2a13"
+  integrity sha512-G9/YIpi2Sf8SqdemSjg/pN+8pxXjakShGvq9LrT4SAByCKjFH6sFHeG0T/dsB23Pi9bZyWRrek6GYM844yEJcQ==
   dependencies:
     parse-domain "^2.3.4"
 
-"@flaregun-net/proxyflare-core@^0.0.113":
-  version "0.0.113"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.113/19412a56398fa3b4cc0ccf79f93fab042761b462ec6404477b288321d1e07274#ae4b0adb928bf7102e894ad31a95a944e002b9f2"
-  integrity sha512-KVSimUZMvboctncwGlHw5UmqBOw/rGt/a4luYVkn1m92iQ1KUB3bSCzx9HtfI571nqrJPhLCS7V6l9t55fzltA==
+"@flaregun-net/proxyflare-core@^0.0.114":
+  version "0.0.114"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.114/947af5040af134b097ba706a40a81fd85873502794b22c63a5ff128060c32e01#605de9b3240e70d234c7091b0bef3b5c52e14eae"
+  integrity sha512-5f8nGsgndiQCQFECCI4yFE6uN+Q0xhlZYkcOTI+fvPIDNXNR8wr1Vs56s36PfInhVBp8KzmEmWewPqMe7l0wkA==
   dependencies:
-    "@flaregun-net/app-utils" "^0.0.113"
+    "@flaregun-net/app-utils" "^0.0.114"
     joi "^17.6.0"
     lodash "^4.17.11"
 
