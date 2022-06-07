@@ -20,15 +20,15 @@
     "transform:private:off": "node ../../tasks/setPrivatePackageFlag.js --off",
     "transform:private:on": "node ../../tasks/setPrivatePackageFlag.js"
   },
-  "license": "MIT",
+  "license": "none",
   "peerDependencies": {
     "@cloudflare/workers-types": "3.10.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "3.10.0",
-    "@flaregun-net/app-utils": "^0.0.116",
-    "@flaregun-net/proxyflare-core": "^0.0.116",
-    "@types/jest": "^27.5.0",
+    "@cloudflare/workers-types": "3.11.0",
+    "@flaregun-net/app-utils": "^0.0.117",
+    "@flaregun-net/proxyflare-core": "^0.0.117",
+    "@types/jest": "^28.1.1",
     "@types/node": "^17.0.35",
     "@typescript-eslint/eslint-plugin": "~5.25.0",
     "@typescript-eslint/parser": "~5.25.0",
