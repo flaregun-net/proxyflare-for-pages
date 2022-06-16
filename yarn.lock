@@ -425,21 +425,30 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@flaregun-net/app-utils@^0.0.117":
-  version "0.0.117"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.117/0ea946f45f5655ac070ede11874431e4efa5a6e70f88e4af2d9e7324a9b79d85#992a58751fe3ec8d6c48f3495e168ccdf00bdc07"
-  integrity sha512-zJCyVSlRvV94rgo2TNxaUbOn0kqzaugBbaiqAHMrTNjwurCFd34bwMxLX1iA0CoEVy9mfWkjHNyRK0740S9vtg==
+"@flaregun-net/app-utils@^0.0.124":
+  version "0.0.124"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.124/2b626f007036efbc47557d0a6f56c1516773750156797a68fa9a180d689b2ecf#25c1bff650b11fccc3908ad4cb01877c8b0f507f"
+  integrity sha512-Af6nP+IzUapfLcQ0pTMPZI9G8Qi2ejW9etEztWS9ylrYjCtSR8Boy9OSq5SdFiS0pSTMX3ICul6MRVEUBy85Tw==
   dependencies:
     parse-domain "^2.3.4"
 
-"@flaregun-net/proxyflare-core@^0.0.117":
-  version "0.0.117"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.117/e6596d17240d83636f88e9a979c87f962da6aacd69b8e8a364b487a2f3f1dfd6#1fde7823c6f7a9194810d773c4d6a0ff7f8383a8"
-  integrity sha512-9cbHW3He2bFBoE9z9u1Rj+Btq/gmrRCdgEWbAZhEPFJ6+LEAvIQU+ce+puglwdPbIpyBuKphA36mjBlaJ9DN8Q==
+"@flaregun-net/proxyflare-core@^0.0.124":
+  version "0.0.124"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.124/818cc10c3137e819dd939d51d4e4a0bde5a6b83e8607bb762dbae987f5a39644#7faaf3346dc991121db109f8c29db6da4a2848cc"
+  integrity sha512-hy32lQ5TaQkzaawDWFRpSa4UqqR8V0dn9G4WVBLUUMvLu9Q/JTZn9oYCdC3gsJ4x31DjEWtR1H9+wVxiH/l7/w==
   dependencies:
-    "@flaregun-net/app-utils" "^0.0.117"
+    "@flaregun-net/app-utils" "^0.0.124"
+    "@flaregun-net/reflare" "^0.0.124"
     joi "^17.6.0"
     lodash "^4.17.11"
+
+"@flaregun-net/reflare@^0.0.124":
+  version "0.0.124"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/reflare/0.0.124/0b993819fd42dd454953de4b86aa1ca119f20c28da19d838a34f71c50ccc5e34#931c7ba2a7ab70b5f40d0f1b072aeff8993d4551"
+  integrity sha512-ZGZzE+9ixtCejqZtttodL9c+Vmbp1P7UYdzUTVr42mcGOCQ9LbDrvc/BE70y3MoTMF1GXncXy5J7WKe9mTmCjA==
+  dependencies:
+    "@flaregun-net/app-utils" "^0.0.124"
+    "@flaregun-net/proxyflare-core" "^0.0.124"
 
 "@hapi/hoek@^9.0.0":
   version "9.3.0"
@@ -5247,11 +5256,6 @@ pascalcase@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
   integrity sha512-XHXfu/yOQRy9vYOtUDVMN60OEJjW013GoObG1o+xwQTpB9eYJX/BjXMsdW13ZDPruFhYYn0AG22w0xgQMwl3Nw==
-
-path-browserify@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/path-browserify/-/path-browserify-1.0.1.tgz#d98454a9c3753d5790860f16f68867b9e46be1fd"
-  integrity sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==
 
 path-exists@^2.0.0:
   version "2.1.0"
