@@ -12,25 +12,26 @@ export const onRequest: ProxyflarePagesPluginFunction = async (context) => {
   const { pluginArgs } = context
   const { config } = pluginArgs
 
-  try {
-    const baseContainer = makeBaseContainer(
-      {
-        request: context.request,
-        waitUntil: context.waitUntil,
-        passThroughOnException: context.next,
-        next: context.next,
-      },
-      {
-        isDev: true,
-        appName: "proxyflare",
-        loggerEndpoint: "https://logger-service.networkchimp.workers.dev",
-      },
-    )
+  const baseContainer = makeBaseContainer(
+    {
+      request: context.request,
+      waitUntil: context.waitUntil,
+      passThroughOnException: context.next,
+      next: context.next,
+    },
+    {
+      isDev: true,
+      appName: "proxyflare",
+      loggerEndpoint: "https://logger-service.networkchimp.workers.dev",
+    },
+  )
 
+  try {
     return router(baseContainer, config)
   } catch (error) {
     // make sure to add
-    // baseContainer.passThroughOnException()
-    return new Response(`it broke ${error?.message} ${error.stack}`)
+    return baseContainer.passThroughOnException() as unknown as ReturnType<
+      typeof context.next
+    >
   }
 }
