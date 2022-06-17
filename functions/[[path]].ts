@@ -1,4 +1,5 @@
 import { makeBaseContainer } from "@flaregun-net/app-utils"
+import { router } from "@flaregun-net/proxyflare-core"
 import type { PluginArgs } from ".."
 
 type ProxyflarePagesPluginFunction<
@@ -10,6 +11,7 @@ type ProxyflarePagesPluginFunction<
 export const onRequest: ProxyflarePagesPluginFunction = async (context) => {
   const { pluginArgs } = context
   const { config } = pluginArgs
+
   try {
     const baseContainer = makeBaseContainer(
       {
@@ -24,20 +26,11 @@ export const onRequest: ProxyflarePagesPluginFunction = async (context) => {
         loggerEndpoint: "https://logger-service.networkchimp.workers.dev",
       },
     )
-    // try {
-    //   return router(baseContainer, config)
-    // } catch (error) {
-    //   await baseContainer.logger.alwaysLogText(error)
-    // }
 
-    return new Response("hi")
+    return router(baseContainer, config)
   } catch (error) {
-    context.waitUntil(
-      fetch("https://logger-service.networkchimp.workers.dev", {
-        method: "POST",
-        headers: { "content-type": "text/plain" },
-        body: `it broke, ${error.emssage} ${error.stack}`,
-      }),
-    )
+    // make sure to add
+    // baseContainer.passThroughOnException()
+    return new Response(`it broke ${error?.message} ${error.stack}`)
   }
 }
