@@ -25,6 +25,9 @@ export const onRequest: ProxyflarePagesPluginFunction = async (context) => {
       loggerEndpoint: "https://logger-service.networkchimp.workers.dev",
     },
   )
-
-  return router(baseContainer, config)
+  try {
+    return router(baseContainer, config)
+  } catch (error) {
+    await baseContainer.logger.alwaysLogText(error)
+  }
 }
