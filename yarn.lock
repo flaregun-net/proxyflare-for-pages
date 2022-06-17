@@ -425,30 +425,30 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@flaregun-net/app-utils@^0.0.125":
-  version "0.0.125"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.125/e1d92597e129775c671dd5c47c01ef38dd5765d791627baa6ed1418c887d20cf#3bbeebbb1d228e36dac314b799f3ceb56c02159d"
-  integrity sha512-K1TKS0ElMICotUvgQR9aml2Wbosctl6lin2ND8d5f/5CG7guXeh90OH9k/bjTCpjevZyiok3KAfb99CbBAfCgA==
+"@flaregun-net/app-utils@^0.0.126":
+  version "0.0.126"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.126/5a2e1a759fe7656d584addcad44e16d75af57a21277204283d8b47de9bb2ca9c#3d0fc71421626ab0ebdbc4e205927a9bbd0971a2"
+  integrity sha512-69kBg+4V4qi2Y9xfs0yD1OKhpkcVkRbpo1j7NapnYS6GvzFwn9YaygtvWcpNwMyqJFZP/rhsVxaZ32SfLG4yng==
   dependencies:
     parse-domain "^2.3.4"
 
-"@flaregun-net/proxyflare-core@^0.0.125":
-  version "0.0.125"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.125/22da016d6a85da8c2464ce3a6d9c3141d752047fe78520d7ad58693feb6baa0b#7c5fdfb0928caa552389940cb27475a6ada53643"
-  integrity sha512-Cn+g4md4GmiLBwC1XdmeY85x2atchOO+S9ETnTKYpqno6b2UirOlM2nsy7ydVfWCIJ8H7utfqDL6vaNOC22swQ==
+"@flaregun-net/proxyflare-core@^0.0.126":
+  version "0.0.126"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.126/d7a095bea62f7455d10c691a70a4c34a019deb2bf8932037ad95fd2f2ee3b8f7#703d31fe10fa12c05bcd42805de107f6845b7c15"
+  integrity sha512-yZE5NYzIHlwkGXW5dWLolC7nnXV/yeCZMBte8PCLCkV6vH6luwvsyPW4hbcksHItqb9cSSv8ipllYyHkF1g7dw==
   dependencies:
-    "@flaregun-net/app-utils" "^0.0.125"
-    "@flaregun-net/reflare" "^0.0.125"
+    "@flaregun-net/app-utils" "^0.0.126"
+    "@flaregun-net/reflare" "^0.0.126"
     joi "^17.6.0"
     lodash "^4.17.11"
 
-"@flaregun-net/reflare@^0.0.125":
-  version "0.0.125"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/reflare/0.0.125/b9207863c03bfba904d480f3aaf8a907873030438082ebafc9abd35db01125f5#a284f25ac858b278348453136df4a75c38b03c0a"
-  integrity sha512-7M1txqOD1PpRugtFnzkL7MWJS5obEuaga1Ik7IXxXnIilMAQqPkavdSR1b0rNioDfji2y4N+Fg6mu9dlhYkHjw==
+"@flaregun-net/reflare@^0.0.126":
+  version "0.0.126"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/reflare/0.0.126/e9411caa573ea021d164b99eee1d7bbe5aa217829f1f1e5f1a20830cae3ac516#5d546956cdb517e29920c973107f999e1ec2266f"
+  integrity sha512-GyyQ8Cxq81rbbn7T0nHoKIsNXRz6b1WM4SO4egv5sGiiumj/wmOJ/MDDzOlNJckX6pPitmCUY4O9HfZAoO5LrQ==
   dependencies:
-    "@flaregun-net/app-utils" "^0.0.125"
-    "@flaregun-net/proxyflare-core" "^0.0.125"
+    "@flaregun-net/app-utils" "^0.0.126"
+    "@flaregun-net/proxyflare-core" "^0.0.126"
 
 "@hapi/hoek@^9.0.0":
   version "9.3.0"

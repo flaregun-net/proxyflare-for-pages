@@ -1,5 +1,4 @@
 import { makeBaseContainer } from "@flaregun-net/app-utils"
-import { router } from "@flaregun-net/proxyflare-core"
 import type { PluginArgs } from ".."
 
 type ProxyflarePagesPluginFunction<
@@ -11,23 +10,34 @@ type ProxyflarePagesPluginFunction<
 export const onRequest: ProxyflarePagesPluginFunction = async (context) => {
   const { pluginArgs } = context
   const { config } = pluginArgs
-
-  const baseContainer = makeBaseContainer(
-    {
-      request: context.request,
-      waitUntil: context.waitUntil,
-      passThroughOnException: context.next,
-      next: context.next,
-    },
-    {
-      isDev: true,
-      appName: "proxyflare",
-      loggerEndpoint: "https://logger-service.networkchimp.workers.dev",
-    },
-  )
   try {
-    return router(baseContainer, config)
+    const baseContainer = makeBaseContainer(
+      {
+        request: context.request,
+        waitUntil: context.waitUntil,
+        passThroughOnException: context.next,
+        next: context.next,
+      },
+      {
+        isDev: true,
+        appName: "proxyflare",
+        loggerEndpoint: "https://logger-service.networkchimp.workers.dev",
+      },
+    )
+    // try {
+    //   return router(baseContainer, config)
+    // } catch (error) {
+    //   await baseContainer.logger.alwaysLogText(error)
+    // }
+
+    return new Response("hi")
   } catch (error) {
-    await baseContainer.logger.alwaysLogText(error)
+    context.waitUntil(
+      fetch("https://logger-service.networkchimp.workers.dev", {
+        method: "POST",
+        headers: { "content-type": "text/plain" },
+        body: `it broke, ${error.emssage} ${error.stack}`,
+      }),
+    )
   }
 }
