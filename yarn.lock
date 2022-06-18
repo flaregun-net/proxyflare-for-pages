@@ -432,17 +432,17 @@
   dependencies:
     parse-domain "^2.3.4"
 
-"@flaregun-net/app-utils@^0.0.153":
-  version "0.0.153"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.153/10e630b5aab0faddc73028f18d5e10c6318d22e214ea42f332bfc01fdae558e6#5b27c377510711695b0a0a7c295b34a3d5ef5c6b"
-  integrity sha512-80a/VJHGKmNAFl+DuOc5UNWRqpBSEbbD9fnVkajGnJ8du0LzVNRFjJ8WlYFaP+Icqx0maFQIwzN+yJE7mrtf5g==
+"@flaregun-net/app-utils@^0.0.154":
+  version "0.0.154"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.154/49d9b953ee1a9ff4876a8ecb21c31a732bff68beb3857b5cdb550997acfaf8ab#7a66bfff18e07ed8a893dde5944b184cb91748c2"
+  integrity sha512-IUryP7/avsdGmR+526VgQGbXbRo9ZhPHYsSOiyvFzn7yhHNihiTq6B/u5TVBYSlqMTQ9H90X9YmbDLrj0UwZxA==
   dependencies:
     parse-domain "^2.3.4"
 
-"@flaregun-net/proxyflare-core@^0.0.153":
-  version "0.0.153"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.153/86bc206e8178ff554809c7a4674b9c6bbe0cb6cded5df2c04c515a4fe79b0bb5#7fdad4b55938ffd314690ca8d8f7d6dd849fab0b"
-  integrity sha512-YI7SKrtG0/V0R+Hy5nvFdkBrfWSigBmpGHwwg0v6tVEeCgoi8dc7RSoKUVt8XNUaAD6YEDDNDx+vBFDr2rJ5iw==
+"@flaregun-net/proxyflare-core@^0.0.154":
+  version "0.0.154"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.154/386171d92813f00c3b33f93fd7a545901696cc58163aae534101e679361d21f9#80c4065d6e8087be9b5622378ed4d464e8eb1f9c"
+  integrity sha512-siHHXmdrs8JuXEI5EzcLlHhiIYtDM/aT5q5L4DvE/K7Tx0uoLpLC248y80uIwmJh5MCrDpKhLiEwB2qlWCEsDQ==
   dependencies:
     "@flaregun-net/app-utils" "^0.0.146"
     "@flaregun-net/reflare" "^0.0.146"
