@@ -432,22 +432,21 @@
   dependencies:
     parse-domain "^2.3.4"
 
-"@flaregun-net/app-utils@^0.0.155":
-  version "0.0.155"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.155/2c7e025e5eeb0f5ed267458966628936d02c21ff2e177c09b56bc7a7b53d5c5d#e357874d2bd8594cf4033949548c5805a1c0642c"
-  integrity sha512-fkum111X1k4xEWpCaB9YfmSA4kdya8G+zdn4lQuKu/Ojh3uFsJjaygxiTgsimK05uod3HZBYzJLKpiuTCc6NDg==
+"@flaregun-net/app-utils@^0.0.157":
+  version "0.0.157"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/app-utils/0.0.157/e33ee2b8579262192cca82e8a9e9f04e98352327b5ae77dba64ca936bec53d0b#bf20b728398491bf9aed5f53d9e63fe98e4fca8c"
+  integrity sha512-GMIWKjr3VZebHw1WLOVu1XE1MW95wjPZITyIOXvp1W3xlu18yNRcvhNVvl5r0tnRSyP6z4xvTv0cFEW+6xB+jw==
   dependencies:
     parse-domain "^2.3.4"
 
-"@flaregun-net/proxyflare-core@^0.0.155":
-  version "0.0.155"
-  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.155/5a47cf7f829f58ae0a334fbc42836ba4fd5cf540a52f4059f7fdfcd52ed272f1#810a33ec6d51e2f88362f926c972a8efd28d4a87"
-  integrity sha512-3x0EkdFailJLOi7/S9tweskH5pPIFcHSa761GEVgLnibLGxjViFcJq4xRbglxrIXtQgXeIHHwf8TEjmuF5Vp5A==
+"@flaregun-net/proxyflare-core@^0.0.157":
+  version "0.0.157"
+  resolved "https://npm.pkg.github.com/download/@flaregun-net/proxyflare-core/0.0.157/2855e69cb4c741c4b061292d8ec408e8d4b6085c097a19aa20b576ae5fb563ea#4fd25750a237c71c722d6eb4b67d4923b4c65175"
+  integrity sha512-iVRYj0KEZBSUuAd0KuvkvR6k7P3kjgEFVw5QKnP7VnllLsq8GdEze3kV4bkUhVCad0OuLNPdbvZAp2YOpefhpQ==
   dependencies:
     "@flaregun-net/app-utils" "^0.0.146"
     "@flaregun-net/reflare" "^0.0.146"
     joi "^17.6.0"
-    lodash "^4.17.11"
 
 "@flaregun-net/reflare@^0.0.146":
   version "0.0.146"
@@ -4699,7 +4698,7 @@ lodash.truncate@^4.4.2:
   resolved "https://registry.yarnpkg.com/lodash.truncate/-/lodash.truncate-4.4.2.tgz#5a350da0b1113b837ecfffd5812cbe58d6eae193"
   integrity sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=
 
-lodash@^4.17.11, lodash@^4.17.19:
+lodash@^4.17.19:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
