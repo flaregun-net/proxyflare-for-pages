@@ -1,1 +1,1 @@
-# Edgeflare for Cloudflare Pages
+# Proxyflare for Cloudflare Pages

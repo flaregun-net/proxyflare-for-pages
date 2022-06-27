@@ -22,7 +22,8 @@ export const onRequest: ProxyflarePagesPluginFunction = async (context) => {
     {
       isDev: true,
       appName: "proxyflare",
-      loggerEndpoint: "https://logger-service.networkchimp.workers.dev",
+      // ensure we don't add loggerEndpoint here
+      loggerEndpoint: null,
     },
   )
 
