@@ -1,7 +1,7 @@
 import { CoreTypes } from "./build"
 
 export type PluginArgs = {
-  config: CoreTypes.RawConfiguration
+  config: CoreTypes.Configuration
 }
 
 export default function ProxyflarePagesPluginFunction(
