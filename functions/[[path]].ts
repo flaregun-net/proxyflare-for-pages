@@ -28,7 +28,14 @@ export const onRequest: ProxyflarePagesPluginFunction = async (context) => {
   )
 
   try {
-    return router(baseContainer, config)
+    return router(baseContainer, {
+      matcher,
+      handlers: {
+        request: handleRequest,
+        redirect: handleRedirect,
+        resource: handleResources,
+      },
+    })
   } catch (error) {
     // make sure to add
     return baseContainer.passThroughOnException() as unknown as ReturnType<
