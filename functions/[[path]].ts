@@ -34,7 +34,7 @@ export const onRequest: ProxyflarePagesPluginFunction = async (context) => {
   )
 
   try {
-    return router(baseContainer, {
+    return router(baseContainer, config, {
       matcher,
       handlers: {
         request: handleRequest,
