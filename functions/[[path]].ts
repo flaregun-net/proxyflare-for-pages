@@ -1,12 +1,6 @@
 import { makeBaseContainer } from "@flaregun-net/app-utils"
 import { router } from "@flaregun-net/proxyflare-core"
 import type { PluginArgs } from ".."
-import {
-  handleRedirect,
-  handleRequest,
-  handleResources,
-  matcher,
-} from "../../proxyflare-core/src/internals/plugin"
 
 type ProxyflarePagesPluginFunction<
   Env = unknown,
@@ -34,14 +28,7 @@ export const onRequest: ProxyflarePagesPluginFunction = async (context) => {
   )
 
   try {
-    return router(baseContainer, config, {
-      matcher,
-      handlers: {
-        request: handleRequest,
-        redirect: handleRedirect,
-        resource: handleResources,
-      },
-    })
+    return router(baseContainer, config)
   } catch (error) {
     // make sure to add
     return baseContainer.passThroughOnException() as unknown as ReturnType<
