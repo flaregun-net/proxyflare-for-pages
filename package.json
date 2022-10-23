@@ -83,7 +83,7 @@
     "directory": "packages/proxyflare-pages",
     "url": "git@github.com:flaregun-net/apps.git"
   },
-  "private": false,
+  "private": true,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   }
