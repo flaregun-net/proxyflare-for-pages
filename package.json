@@ -1,6 +1,6 @@
 {
   "name": "@flaregun-net/proxyflare-for-pages",
-  "version": "0.0.204",
+  "version": "0.0.205",
   "description": "NGINX-like port proxying at the edge",
   "main": "build/index.js",
   "types": "index.d.ts",

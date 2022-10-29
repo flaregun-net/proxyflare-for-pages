@@ -22,7 +22,6 @@ export const onRequest: ProxyflarePagesPluginFunction = async (context) => {
     {
       isDev: true,
       appName: "proxyflare",
-      // ensure we don't add loggerEndpoint here
       loggerEndpoint: null,
     },
   )
