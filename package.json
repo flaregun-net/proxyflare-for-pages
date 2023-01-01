@@ -2,7 +2,7 @@
   "name": "@flaregun-net/proxyflare-for-pages",
   "version": "0.0.217-next.4",
   "description": "A reverse proxy for your website on Cloudflare Pages",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "main": "build/index.js",
   "types": "index.d.ts",
