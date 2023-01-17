@@ -24,22 +24,22 @@
   ],
   "scripts": {
     "prepare": "npm run build",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm i --ignore-scripts && npm run build",
     "postpublish": "npm run transform:private:on",
     "build": "npm-run-all transform:private:off build:*",
     "build:types": "ts-node ./tasks/copy-types.ts",
     "build:functions": "npx wrangler pages functions build --plugin --outfile=build/index.js",
-    "transform:private:off": "node ../../tasks/setPrivatePackageFlag.js --off",
-    "transform:private:on": "node ../../tasks/setPrivatePackageFlag.js",
-    "publish": "ts-node ./tasks/publish.ts"
+    "transform:private:off": "ts-node ./tasks/setPrivatePackageFlag.ts --off",
+    "transform:private:on": "ts-node ./tasks/setPrivatePackageFlag.ts",
+    "release": "ts-node ./tasks/publish.ts"
   },
   "peerDependencies": {
     "@cloudflare/workers-types": "3.14.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "3.14.0",
-    "@flaregun-net/app-utils": "0.0.218",
-    "@flaregun-net/proxyflare-core": "0.0.218",
+    "@flaregun-net/app-utils": "0.0.219",
+    "@flaregun-net/proxyflare-core": "0.0.219",
     "@types/jest": "^29.2.2",
     "@types/node": "^17.0.35",
     "@typescript-eslint/eslint-plugin": "~5.25.0",

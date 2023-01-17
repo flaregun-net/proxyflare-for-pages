@@ -38,26 +38,6 @@ const getLastVersion = async () => {
   return { isPrerelease: parsed.prerelease.length > 0, version: parsed.version }
 }
 
-const release = (args: string[]) => {
-  const command = spawn("release-it", args, { cwd: PROJECT_ROOT })
-
-  command.stdout.on("data", (data) => {
-    console.log(data.toString())
-  })
-
-  command.stderr.on("data", (data) => {
-    console.log(data.toString())
-  })
-
-  command.on("error", (error) => {
-    console.log(`error: ${error.message}`)
-  })
-
-  command.on("close", (code) => {
-    console.log(`child process exited with code ${code}`)
-  })
-}
-
 ;(async () => {
   // get latest version of proxyflare-core
   const { version } = await getLastVersion()

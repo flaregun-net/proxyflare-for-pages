@@ -11,23 +11,27 @@ jobs:
         with:
           node-version: 16
           check-latest: true
-          cache: npm
-          registry-url: "https://npm.pkg.github.com"
-      - name: Authenticate with private NPM package
-        run: |
-          echo "@flaregun-net:registry=https://npm.pkg.github.com" >> .npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
+          registry-url: https://npm.pkg.github.com
+          scope: "@flaregun-net"
       - name: Install dependencies
         # Skip post-install scripts here, as a malicious script could steal NODE_AUTH_TOKEN.
         run: |
           npm ci --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          check-latest: true
+          registry-url: https://registry.npmjs.org
+          scope: "@flaregun-net"
+      - name: Set git user
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - name: Publish
         run: |
           npm run release
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npm run publish
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
