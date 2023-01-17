@@ -59,11 +59,28 @@ const release = (args: string[]) => {
 }
 
 ;(async () => {
+  // get latest version of proxyflare-core
   const { version } = await getLastVersion()
 
   const args = [version, "--ci", `--git.tagName ${version}`]
 
   console.log(`Publishing with ${args}`)
 
-  release(args)
+  const command = spawn("release-it", args, { cwd: PROJECT_ROOT })
+
+  command.stdout.on("data", (data) => {
+    console.log(data.toString())
+  })
+
+  command.stderr.on("data", (data) => {
+    console.log(data.toString())
+  })
+
+  command.on("error", (error) => {
+    console.log(`error: ${error.message}`)
+  })
+
+  command.on("close", (code) => {
+    console.log(`child process exited with code ${code}`)
+  })
 })()

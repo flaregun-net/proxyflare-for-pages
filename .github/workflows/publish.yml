@@ -1,11 +1,5 @@
 name: Publish
-on:
-  workflow_dispatch:
-    inputs:
-      increment:
-        description: 'Increment "major", "minor", "patch", or "pre*" version; or specify version'
-        type: string
-        required: true
+on: workflow_dispatch
 
 jobs:
   publish:
@@ -25,13 +19,13 @@ jobs:
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
       - name: Install dependencies
         # Skip post-install scripts here, as a malicious script could steal NODE_AUTH_TOKEN.
-        shell: bash
         run: |
           npm ci --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish
-        shell: bash
+        run: |
+          npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
