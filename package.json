@@ -23,10 +23,12 @@
     "build/index.js"
   ],
   "scripts": {
-    "prepare": "npm run build",
+    "precommit": "lint-staged",
+    "prepare": "husky install && npm run build",
     "prepublishOnly": "npm i --ignore-scripts && npm run build",
     "postpublish": "npm run transform:private:on",
     "build": "npm-run-all transform:private:off build:*",
+    "postbuild": "npm run transform:private:on",
     "build:types": "ts-node ./tasks/copy-types.ts",
     "build:functions": "npx wrangler pages functions build --plugin --outfile=build/index.js",
     "transform:private:off": "ts-node ./tasks/setPrivatePackageFlag.ts --off",
@@ -38,8 +40,8 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "3.14.0",
-    "@flaregun-net/app-utils": "0.0.219",
-    "@flaregun-net/proxyflare-core": "0.0.219",
+    "@flaregun-net/app-utils": "0.0.223",
+    "@flaregun-net/proxyflare-core": "0.0.223",
     "@types/jest": "^29.2.2",
     "@types/node": "^17.0.35",
     "@typescript-eslint/eslint-plugin": "~5.25.0",
@@ -59,7 +61,8 @@
     "semver": "^7.3.8",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.8.0",
-    "typescript": "~4.5.2"
+    "typescript": "~4.5.2",
+    "husky": "^7.0.0"
   },
   "jest": {
     "testEnvironment": "miniflare",

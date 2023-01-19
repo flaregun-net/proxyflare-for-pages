@@ -9,7 +9,7 @@
     "push": true,
     "requireUpstream": false,
     "requireCleanWorkingDir": false,
-    "pushArgs": ["--follow-tags", "--set-upstream origin staging"],
+    "pushArgs": ["--follow-tags"],
     "releaseName": "v${version}",
     "commitMessage": "v${version}"
   },

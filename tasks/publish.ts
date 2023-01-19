@@ -6,13 +6,12 @@ import semverParse from "semver/functions/parse"
 const PROJECT_ROOT = path.resolve(__dirname, "../")
 
 const getVersions = (
-  packageType: string,
   packageName: string,
   githubToken: string,
   orgName = "flaregun-net",
 ): Promise<{ name: string }[]> =>
   fetch(
-    `https://api.github.com/orgs/${orgName}/packages/${packageType}/${packageName}/versions`,
+    `https://api.github.com/orgs/${orgName}/packages/npm/${packageName}/versions`,
     {
       headers: {
         "X-GitHub-Api-Version": "2022-11-28",
@@ -20,11 +19,18 @@ const getVersions = (
         Authorization: `Bearer ${githubToken}`,
       },
     },
-  ).then((a) => a.json())
+  )
+    .then((a) => {
+      if (a.status !== 200) {
+        throw new Error(`request failed with code ${a.status}`)
+      }
+
+      return a
+    })
+    .then((a) => a.json())
 
 const getLastVersion = async () => {
   const versions = await getVersions(
-    "npm",
     "proxyflare-core",
     process.env.GITHUB_TOKEN,
   )
@@ -42,7 +48,7 @@ const getLastVersion = async () => {
   // get latest version of proxyflare-core
   const { version } = await getLastVersion()
 
-  const args = [version, "--ci", `--git.tagName ${version}`]
+  const args = [version, "--ci", `--git.tagName ${version}`, "-VV"]
 
   console.log(`Publishing with ${args}`)
 
