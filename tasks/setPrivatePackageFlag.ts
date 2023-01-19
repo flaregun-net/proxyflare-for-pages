@@ -15,12 +15,11 @@ const init = () => {
 
   const contents = getProjectPackage()
 
-  let target = true
   if (flag === "--off") {
-    target = false
+    delete contents.private
+  } else {
+    contents.private = true
   }
-
-  contents.private = target
 
   setProjectPackage(contents)
 }

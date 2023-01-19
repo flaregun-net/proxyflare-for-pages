@@ -1,7 +1,8 @@
 {
   "hooks": {
-    "before:init": ["npm run prepublishOnly"],
-    "after:init": ["npm run transform:private:off"],
+    "before:init": ["npm run prepublishOnly", "npm run transform:private:off"],
+    "before:npm:release": ["npm run transform:private:off", "cat package.json"],
+    "before:npm:init": ["npm run transform:private:off", "cat package.json"],
     "after:release": ["npm run postpublish"]
   },
   "git": {
