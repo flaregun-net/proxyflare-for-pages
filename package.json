@@ -25,7 +25,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "prepare": "husky install && npm run build",
-    "prepublishOnly": "npm i --ignore-scripts && npm run build",
+    "prepublishOnly": "npm run build",
     "postpublish": "npm run transform:private:on",
     "build": "npm-run-all transform:private:off build:*",
     "postbuild": "npm run transform:private:on",
