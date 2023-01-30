@@ -1,6 +1,6 @@
 {
   "name": "@flaregun-net/proxyflare-for-pages",
-  "version": "0.0.224-next.3",
+  "version": "0.0.224-next.7",
   "description": "A reverse proxy for your website on Cloudflare Pages",
   "license": "MIT",
   "main": "build/index.js",
@@ -28,9 +28,10 @@
     "postpublish": "npm run transform:private:on",
     "build": "npm-run-all transform:private:off build:*",
     "build:types": "ts-node ./tasks/copy-types.ts",
-    "build:functions": "npx wrangler pages functions build --plugin --outfile=build/index.js",
+    "build:functions": "npx wrangler@latest pages functions build --plugin --outfile=build/index.js",
     "transform:private:off": "ts-node ./tasks/setPrivatePackageFlag.ts --off",
     "transform:private:on": "ts-node ./tasks/setPrivatePackageFlag.ts",
+    "publish-prerelease": "npm run release",
     "release": "ts-node ./tasks/publish.ts"
   },
   "peerDependencies": {
