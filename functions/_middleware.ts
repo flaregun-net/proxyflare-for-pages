@@ -20,7 +20,6 @@ export const onRequest: ProxyflarePagesPluginFunction = async (context) => {
       next: context.next,
     },
     {
-      isDev: false,
       appName: "proxyflare",
       loggerEndpoint: null,
     },
