@@ -1,6 +1,6 @@
 import { makeBaseContainer } from "@flaregun-net/app-utils"
-import { router } from "@flaregun-net/proxyflare-core"
 import type { PluginArgs } from ".."
+import { router } from "../build/core"
 
 type ProxyflarePagesPluginFunction<
   Env = unknown,
