@@ -1,6 +1,6 @@
 {
   "name": "@flaregun-net/proxyflare-for-pages",
-  "version": "0.0.224-next.11",
+  "version": "0.1.0",
   "description": "A reverse proxy for your website on Cloudflare Pages",
   "license": "MIT",
   "main": "build/index.js",
